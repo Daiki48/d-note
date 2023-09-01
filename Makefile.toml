@@ -1,0 +1,10 @@
+# Not work
+# [tasks.serve]
+# script_runner = "powershell"
+# script = ["-File", "./serve.ps1"]
+
+[tasks.tailwind]
+script = ["npx tailwindcss -i ./input.css -o ./public/tailwind.css --watch"]
+
+[tasks.serve]
+script = ["dx serve --hot-reload"]
