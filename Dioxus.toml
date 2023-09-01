@@ -21,13 +21,14 @@ title = "Dnote"
 [web.watcher]
 
 # when watcher trigger, regenerate the `index.html`
+# default true
 reload_html = true
 
 # which files or dirs will be watcher monitoring
 watch_path = ["src", "public"]
 
 # uncomment line below if using Router
-# index_on_404 = true
+index_on_404 = true
 
 # include `assets` in web platform
 [web.resource]
@@ -47,3 +48,6 @@ style = []
 
 # Javascript code file
 script = []
+
+# [bundler]
+# icon = ["static/favicon.ico"]
