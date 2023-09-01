@@ -1,14 +1,14 @@
 #![allow(non_snake_case)]
 
+mod layout;
 mod router;
 
-use router::Route;
+use layout::Layout;
 
 use dioxus::prelude::*;
-use dioxus_router::prelude::*;
 
 fn App(cx: Scope) -> Element {
-    render!(Router::<Route> {})
+    cx.render(rsx!(Layout {}))
 }
 
 fn main() {
