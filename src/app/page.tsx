@@ -6,6 +6,7 @@ export default function Home() {
       <h1>Dnote</h1>
       <p>現在テスト中</p>
       <p>nextコマンドを実行出来ず失敗</p>
+      <p>rsyncを使用してみる</p>
     </main>
   );
 }
