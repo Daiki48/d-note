@@ -21,4 +21,4 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > key
           chmod 600 key
       - name: Deploy with rsync
-        run: rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o -StrictHostKeyChecking=no -p 10022" --delete ./out/* ${{ secrets.XSERVER_USERNAME }}@${{ secrets.XSERVER_HOST }}:/home/daiki9548/d-note.org/public_html --exclude .htaccess
+        run: rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 10022" --delete ./out/* ${{ secrets.XSERVER_USERNAME }}@${{ secrets.XSERVER_HOST }}:/home/daiki9548/d-note.org/public_html --exclude .htaccess
