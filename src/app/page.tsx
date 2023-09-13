@@ -7,6 +7,7 @@ export default function Home() {
       <p>現在テスト中</p>
       <p>nextコマンドを実行出来ず失敗</p>
       <p>rsyncを使用してみる</p>
+      <p>main.ymlを修正</p>
     </main>
   );
 }
