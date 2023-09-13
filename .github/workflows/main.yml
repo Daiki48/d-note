@@ -21,4 +21,4 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: Deploy with rsync
-        run: rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 10022" --delete ./out/* ${{ secrets.XSERVER_USERNAME }}@${{ secrets.XSERVER_HOST }}:/home/daiki9548/d-note.org/public_html/ --exclude .htaccess
+        run: rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 10022" --delete ./out/* daiki9548@sv14680.xserver.jp:/home/daiki9548/d-note.org/public_html/ --exclude .htaccess
