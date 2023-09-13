@@ -4,16 +4,6 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 text-xl">
       <h1>Dnote</h1>
-      <p>現在テスト中</p>
-      <p>nextコマンドを実行出来ず失敗</p>
-      <p>rsyncを使用してみる</p>
-      <p>main.ymlを修正</p>
-      <p>Deploy with rsyncでエラー発生</p>
-      <p>rsync部分のエラーを修正</p>
-      <p>サーバー側の公開鍵が登録されていなかった</p>
-      <p>手動でSSH接続しようとしたけど失敗・・・</p>
-      <p>鍵を作り直した</p>
-      <p>エラーが解消しない</p>
     </main>
   );
 }
