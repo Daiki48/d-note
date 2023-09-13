@@ -8,6 +8,7 @@ export default function Home() {
       <p>nextコマンドを実行出来ず失敗</p>
       <p>rsyncを使用してみる</p>
       <p>main.ymlを修正</p>
+      <p>Deploy with rsyncでエラー発生</p>
     </main>
   );
 }
