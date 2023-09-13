@@ -1,8 +1,9 @@
-use crate::router::Route;
-
 use dioxus::prelude::*;
-use dioxus_router::prelude::*;
 
 pub fn Header(cx: Scope) -> Element {
-    render!(Router::<Route> {})
+    cx.render(rsx!(
+        section { style: "display: flex; justify-content: space-between; padding: 6px;",
+            div { style: "font-size: 2em;", h1 { "Dnote" } }
+        }
+    ))
 }
