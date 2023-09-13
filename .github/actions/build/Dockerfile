@@ -1,5 +1,9 @@
 FROM node:latest
 
-RUN npm install -g next
+WORKDIR /app
 
-CMD ["next", "build"]
+COPY package*.json ./
+
+RUN npm install
+
+CMD ["npm", "run", "build"]

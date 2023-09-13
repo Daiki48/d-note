@@ -13,7 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build
-        uses: ./.github/actions/build
+        # uses: ./.github/actions/build
+        run: npm run build
       - name: Deploy to Xserver
         uses: appleboy/scp-action@master
         with:
