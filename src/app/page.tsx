@@ -4,6 +4,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 text-xl">
       <h1>Dnote</h1>
+      <p>現在テスト中</p>
     </main>
   );
 }
