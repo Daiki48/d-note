@@ -1,0 +1,24 @@
+name: CI/CD
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/**"
+      - "next.config.js"
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build
+        uses: ./.github/actions/build
+      - name: Deploy to Xserver
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.XSERVER_HOST }}
+          username: ${{ secrets.XSERVER_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "out/*"
+          target: "/home/daiki9548/d-note.org/public_html"
