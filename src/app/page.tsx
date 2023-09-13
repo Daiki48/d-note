@@ -1,9 +1,12 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 text-xl">
+    <main className="">
       <h1>Dnote</h1>
+      <p>Github Actionsによる自動デプロイを実装</p>
+      <p>Next.jsで実装</p>
+      <Link href="/blog">Blogのページへ</Link>
     </main>
   );
 }
