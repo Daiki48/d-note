@@ -3,6 +3,6 @@
     "development"
   ],
   "hints": {
-    "meta-charset-utf-8": "off"
+    "typescript-config/is-valid": "off"
   }
 }
