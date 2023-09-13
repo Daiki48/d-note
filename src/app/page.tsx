@@ -11,6 +11,7 @@ export default function Home() {
       <p>Deploy with rsyncでエラー発生</p>
       <p>rsync部分のエラーを修正</p>
       <p>サーバー側の公開鍵が登録されていなかった</p>
+      <p>手動でSSH接続しようとしたけど失敗・・・</p>
     </main>
   );
 }
