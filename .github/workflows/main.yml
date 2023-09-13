@@ -12,8 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm install
       - name: Build
-        # uses: ./.github/actions/build
         run: npm run build
       - name: Deploy to Xserver
         uses: appleboy/scp-action@master
