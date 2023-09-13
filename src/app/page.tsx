@@ -10,6 +10,7 @@ export default function Home() {
       <p>main.ymlを修正</p>
       <p>Deploy with rsyncでエラー発生</p>
       <p>rsync部分のエラーを修正</p>
+      <p>サーバー側の公開鍵が登録されていなかった</p>
     </main>
   );
 }
