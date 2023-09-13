@@ -10,7 +10,8 @@
 
 # next.js
 /.next/
-/out/
+# SSHでデプロイするため
+# /out/
 
 # production
 /build
