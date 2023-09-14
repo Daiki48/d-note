@@ -25,6 +25,15 @@
     "paths": {
       "@/*": [
         "./src/*"
+      ],
+      "@/elements/*": [
+        "./src/components/elements/*"
+      ],
+      "@/ui/*": [
+        "./src/components/ui/*"
+      ],
+      "@/panda": [
+        "./styled-system/css"
       ]
     }
   },
