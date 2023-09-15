@@ -5,20 +5,33 @@ on:
       - main
     paths:
       - "src/**"
-      - "next.config.js"
+      - "deno.json"
+      - "_config.js"
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Install dependencies
-        run: npm install
+      - name: Setup deno
+        uses: denolib/setup-deno@v2
+        with:
+          deno-version: v1.x
+      - name: Set DENO_DIR
+        run: |
+          echo "DENO_DIR=$(deno info --unstable | grep DENO_DIR | cut -d: -f2 | xargs)" >> $GITHUB_ENV
+      - name: Cache Dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ env.DENO_DIR }}
+          key: ${{ runner.os }}-deno-${{ hashFiles('**/deno.json') }}
+      - name: Install Dependencies
+        run: deno cache --unstable --reload
       - name: Build
-        run: npm run build
+        run: deno task build
       - name: Generate SSH key
         run: echo "$SSH_PRIVATE_KEY" > key && chmod 600 key
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: Deploy with rsync
-        run: rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 10022" --delete ./out/* ${{ secrets.XSERVER_PUBLIC_PATH }} --exclude .htaccess
+        run: rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 10022" --delete ./_site/* ${{ secrets.XSERVER_PUBLIC_PATH }} --exclude .htaccess

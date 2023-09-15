@@ -1,9 +1,9 @@
-FROM node:latest
+FROM denoland/deno:latest
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY deno*.json ./
 
-RUN npm install
+RUN deno cache --unstable --reload
 
-CMD ["npm", "run", "build"]
+CMD ["deno", "task", "build"]
