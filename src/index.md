@@ -5,7 +5,7 @@ title: Dnote
 
 # Dnote
 
-こんにちは
+個人用のサイト
 
 ```js
 console.log("Hello World");
