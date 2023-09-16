@@ -11,17 +11,18 @@ const site = lume({
   src: "./src",
 });
 
-site.use(jsx());
-site.use(sass());
-site.copy("img");
-// site.copy("styles");
-// site.loadAssets([".ico"]);
-site.use(codeHighlight({
-  languages: {
-    javascript: lang_javascript,
-    bash: lang_bash,
-  },
-}));
-site.use(metas(/* Options */));
+site
+  .use(jsx())
+  .copy("assets/img")
+  .use(sass())
+  .use(
+    codeHighlight({
+      languages: {
+        javascript: lang_javascript,
+        bash: lang_bash,
+      },
+    })
+  )
+  .use(metas());
 
 export default site;

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="icon" href="/assets/img/favicon.ico">
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <header>
+      {% include "templates/header.njk" %}
+    </header>
+    <main>
+      {{ content | safe }}
+    </main>
+    <footer>
+      {% include "templates/footer.njk" %}
+    </footer>
+  </body>
+</html>
