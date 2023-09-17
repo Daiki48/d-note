@@ -1,10 +1,5 @@
 @import "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/atom-one-dark.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=M+PLUS+Rounded+1c:wght@400;500;700&family=Zen+Maru+Gothic&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-
-  h1 {
-    font-size: 40px;
-  }
-}
+@import "css/base.scss";
+@import "css/postlist.scss";

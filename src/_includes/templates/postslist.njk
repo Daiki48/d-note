@@ -1,8 +1,24 @@
 {% set posts = search.pages("type=posts") %}
 <ul>
   {% for post in posts %}
-    <li>
-      <a href="{{ post.data.url }}">{{ post.data.title }}</a>
+    <li class="post">
+      <strong>
+        <a href="{{ post.data.url }}">{{ post.data.title }}</a>
+        <br/>
+        {% if post.data.tags %}
+          {% for tag in post.data.tags %}
+            <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        {% endif %}
+      </strong>
+      <div class="date-info">
+        <span>更新日:
+        </span>
+        <time>{{ post.data.date | date('yyyy/MM/dd') }}</time>
+        <span>公開日:
+        </span>
+        <time>{{ post.data.pub | date('yyyy/MM/dd') }}</time>
+      </div>
     </li>
   {% endfor %}
 </ul>
