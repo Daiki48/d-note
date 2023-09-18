@@ -12,12 +12,12 @@
         {% endif %}
       </strong>
       <div class="date-info">
-        <span>更新日:
-        </span>
-        <time>{{ post.data.date | date('yyyy/MM/dd') }}</time>
         <span>公開日:
         </span>
-        <time>{{ post.data.pub | date('yyyy/MM/dd') }}</time>
+        <time>{{ post.data.date | date('yyyy/MM/dd') }}</time>
+        <span>更新日:
+        </span>
+        <time>{{ post.data.update | date('yyyy/MM/dd') }}</time>
       </div>
     </li>
   {% endfor %}
