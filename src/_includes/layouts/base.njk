@@ -9,13 +9,13 @@
   <body class="flex-body-container">
     <a href="/">ホームへ戻る</a>
     <header class="header-container">
-      {% include "templates/header.njk" %}
+      {% include "layouts/header.njk" %}
     </header>
     <main>
       {{ content | safe }}
     </main>
     <footer>
-      {% include "templates/footer.njk" %}
+      {% include "layouts/footer.njk" %}
     </footer>
   </body>
 </html>
